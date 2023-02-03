@@ -1,0 +1,30 @@
+<html>
+<head></head>
+<body>
+  <h1>Example</h1>
+  <script>
+    var dictionary = new Map();
+    var first_string = window.prompt("Think of a sentence, and give me the first half: ");
+    var second_string = window.prompt("Now give me the second half: ");
+    function create_sentence(chunk1, chunk2) {
+      chunk1[0] = chunk1[0].toUpperCase();
+      return (chunk1 + " " + chunk2 + "!");
+    }
+    dictionnaire[1] = create_sentence(first_string, second_string);
+    dictionnaire[2] = create_sentence(second_string, first_string);
+    console.log(dictionnaire.un)
+    var choice_message = "So now, what is the correct sentence? " +
+      "\n[1] '" + dictionnaire[1] + "'" +
+      "\n[2] '" + dictionnaire[2] + "'";
+    choice_number = window.prompt(choice_message);
+    if (choice_number != 1 && choice_number != 2) {
+      alert("Wrong choice! '" + choice_number + "' is not a valid choice!");
+    } else {
+      console.log(choice_number);
+      console.log(dictionnaire[choice_number]);
+      alert("Okay the final result is: " + dictionnaire[choice_number]);
+    }
+    alert("END");
+  </script>
+</body>
+</html> 
