@@ -1,5 +1,6 @@
 //En JS ou Python, implémenter (on nous demande toujours une fonction) un *bubble sort* triant cette liste de 20 entiers :
 
+//Bubble Sort en fonction JS
 let triTableau = () => {
     let tableau = [2, 54, 7, 38, 22, 13, 19, 45, 31, 77, 98, 5, 12, 28, 81, 26, 72, 4, 20, 42];
     tableau.sort((a, b) => a - b);
@@ -7,6 +8,7 @@ let triTableau = () => {
 }
 triTableau()
 
+//Bubble Sort en algorithme implémenté
 let tableau = [2, 54, 7, 38, 22, 13, 19, 45, 31, 77, 98, 5, 12, 28, 81, 26, 72, 4, 20, 42];
 function permut(i, tab) {
     let x;
