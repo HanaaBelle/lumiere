@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1 id="Parlez_vous_le_morse?"></h1>
+<h2 id="Affichage"></h2>
+<script>
+
+    //* Ajout du Dictionnaire "Latin Morse" en annexe 1:
+    // Permet d’établir une table de correspondance entre les caractères alphabets latin et l’alphabet morse.
+    const latinToMorse = {
+        'A':'.-',
+        'B':'-...',
+        'C':'-.-.',
+        'D':'-..',
+        'E':'.',
+        'F':'..-.',
+        'G':'--.',
+        'H':'....',
+        'I':'..',
+        'J':'.---',
+        'K':'-.-',
+        'L':'.-..',
+        'M':'--',
+        'N':'-.',
+        'O':'---',
+        'P':'.--.',
+        'Q':'--.-',
+        'R':'.-.',
+        'S':'...',
+        'T':'-',
+        'U':'..-',
+        'V':'...-',
+        'W':'.--',
+        'X':'-..-',
+        'Y':'-.--',
+        'Z':'--..'
+    }
+
+    //1 Une fonction qui fait le "Split":
+    // Elle prend en paramètre du texte et retourne un tableau contenant chaque caractère du texte.
+    // Puis à l'appel je teste la fonction en lui donnant une chaine de caractères “Hello, world”, et
+    // et je m'assure qu’elle renvoie bien ["H", "e", "l", "l", "o", ",", " ", "w", "o", "r", "l", "d"]
+    function getLatinCharacterList(texte) {
+        //console.log(texte);
+        let tableau_de_caracteres = [];
+        //console.log(texte);
+        //let tableau_de_caracteres = texte.split(); utiliser la fonction Split() ou faire ça :
+        for (let index = 0; index < texte.length; index++) {
+            tableau_de_caracteres[index] = texte[index];
+            //console.log(tableau_de_caracteres[index]);
+            //document.getElementById("Affichage").innerText +=
+                //" " + tableau_de_caracteres[index];
+        }
+        return tableau_de_caracteres;
+    }
+
+    //2 Une fonction qui fait la translation d'un caractere latin dans un dictionnaire latin > morse:
+    //Prend en paramètre un caractère et renvoie sa correspondance en morse.
+    //Puis à l'appel je teste la fonction en lui donnant en paramètre “A”,
+    //et je m'assure qu’elle renvoie bien ".-"
+    function translateLatinCharacter(caractere){
+        let morse = "";
+        //console.log(caractere); ['H']
+        for (let key in latinToMorse){
+            if (caractere === key){
+                let morse = latinToMorse[key];
+                console.log(`${key} : ${morse}`);
+                document.getElementById("Affichage").innerText += " \n " + `${key} : ${morse}`;
+            }
+        }
+        return morse;
+    }
+
+    //3 Une fonction qui prend en paramètre du texte et qui va utiliser
+    //la fonction de l’étape 1, pour chaque caractère,
+    // Puis applique la fonction de l’étape 2 et ainsi récupérer son équivalent morse.
+    function encode(texte){
+        console.log(texte);
+        let translat_text = "";
+            const texte_as_array_of_chars = getLatinCharacterList(texte);
+            // texte_as_array_of_chars = ['H','E','L'...]
+            for (let index=0; index<texte_as_array_of_chars.length; index++){
+                //Parcourir pour extraire chaque élement du tableau
+                let caracter_to_translate = texte_as_array_of_chars[index].toUpperCase();
+                const morse_caracter = translateLatinCharacter(caracter_to_translate);
+                translat_text += morse_caracter;
+            }
+        return translat_text;
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+encode("Hello World !");
+
+</script>
+</body>
+</html>
