@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+
+    function writeXaine(numberAsString) {
+        let numberAsInt = parseInt(numberAsString, 10);
+        if (numberAsInt <= 14 && numberAsInt >= 0) {
+            console.log("une dizaine !")
+        } else if (numberAsInt >= 15 && numberAsInt <= 24) {
+            console.log("une vingtaine")
+        } else if (numberAsInt >= 25 && numberAsInt <= 34) {
+            console.log("une trentaine")
+        } else if (numberAsInt >= 35 && numberAsInt <= 44) {
+            console.log("une quarantaine")
+        } else if (numberAsInt >= 45 && numberAsInt <= 54) {
+            console.log("une cinquantaine")
+        }
+    }
+
+    //writeXaine(23)
+
+    function writeXaine2(numberAsString) {
+        let numberAsInt = parseInt(numberAsString, 10);
+        switch (numberAsInt) {
+            case (numberAsInt <= 14 && numberAsInt >= 0): {
+                console.log("une dizaine !")
+                break;
+            }
+            case (numberAsInt >= 15 && numberAsInt <= 24) : {
+                console.log("une vingtaine")
+                break;
+            }
+            case (numberAsInt >= 25 && numberAsInt <= 34) : {
+                console.log("une trentaine")
+                break;
+            }
+            case (numberAsInt >= 35 && numberAsInt <= 44) : {
+                console.log("une quarantaine")
+                break;
+            }
+            case (numberAsInt >= 45 && numberAsInt <= 54) : {
+                console.log("une cinquantaine")
+                break;
+            }
+        }
+    }
+
+    //writeXaine2(23)
+
+    function writeXaine3(numberAsString) {
+        let numberAsInt = parseInt(numberAsString, 10);
+        if (numberAsInt <= 14 && numberAsInt >= 0) {
+            console.log("une dizaine !")
+            return;
+        }
+        if (numberAsInt >= 15 && numberAsInt <= 24) {
+            console.log("une vingtaine")
+            return;
+        }
+        if (numberAsInt >= 25 && numberAsInt <= 34) {
+            console.log("une trentaine")
+            return;
+        }
+        if (numberAsInt >= 35 && numberAsInt <= 44) {
+            console.log("une quarantaine")
+            return;
+        }
+        if (numberAsInt >= 45 && numberAsInt <= 54) {
+            console.log("une cinquantaine")
+            return;
+        }
+    }
+
+    writeXaine3(43);
+
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+

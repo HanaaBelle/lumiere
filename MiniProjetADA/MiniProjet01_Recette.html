@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniProjet01</title>
+</head>
+
+<body>
+
+    <h1> * Comment bien préparer une Recette ;) * </h1>
+
+    <p id="Recette"> -*- -*- </p>
+
+    <p id="Ingredients"> -*- Liste des ingrédients pour préparer -*- </p>
+
+
+    <script>
+
+        console.log("Hello");
+
+        console.log(document.getElementById('Ingredients').innerText += "\n                        \n");
+
+        //Fonction qui convertit le Input du nombre des ingrédients de String en nombre :
+        function promptNombre(messageAconvertir) {
+            console.log("Convertir le Input du nombre des ingrédients de String en nombre");
+            var promptedChaine = window.prompt(messageAconvertir);
+            return parseInt(promptedChaine);
+        }
+
+        //Un Input avec prompt pour récupérer le nom de la recette :
+        const message = prompt("Bonjour! Quelle est le nom de votre Recette :");
+        console.log(message);
+
+        document.getElementById('Recette').innerText = "\n" + message;
+
+        //Un Input avec prompt pour récupérer le nombre des ingrédients :
+        const nombreIngredients = promptNombre("Entrez le nombre des ingrédients pour préparer : " + message);
+        console.log(nombreIngredients);
+
+        //Affecter à index le nombre des ingrédients récupéré depuis le Input avec prompt: 
+        const index = nombreIngredients;
+        console.log("Le nombre des ingrédients est égale à : ", index);
+
+        //Une fonction pour faire des Input avec prompt pour récupérer les ingrédients entrés :
+        function inputIngredients() {
+            let ingredients = [];
+            for (let i = 0; i < index; i++) {
+                let ingredient = prompt("Entrez l'ingrédient numéro ");
+                ingredients.push(ingredient);
+                console.log(i, ingredients[i]);
+                //const tableauTrieFinal = ingredients.sort();
+                //ingredients = tableauTrieFinal;
+
+            }
+            return ingredients;
+        }
+
+        //function convertirEnString(tableauNonString)
+        //{
+            //for (var i = 0; i < tableauNonString.length; i++) {
+                
+                //console.log(i, tableauNonString[i], typeof(tableauNonString[i]));
+            //}
+        //}
+
+        console.log("Voici la liste des ingrédients pour préparer : " + message);
+
+        //Fonction pour afficher un tableau :
+        function afficherTableau(tableau) {
+            for (let index = 0; index < tableau.length; index++) {
+
+                console.log(index, tableau[index], typeof(tableau[index]));
+
+                if (document.getElementById('Ingredients') != null) {
+
+                    if (index === tableau.length - 1) {
+                        document.getElementById('Ingredients').innerText += "\n" + tableau[index] + ".";
+                    }
+
+                    else {
+                        document.getElementById('Ingredients').innerText += "\n" + tableau[index] + ",";
+                    }
+                }
+
+                document.getElementById('Ingredients').innerText += "\n                             \n";
+            }
+
+        }
+
+        let IngredientsNonTries = inputIngredients();
+
+        //Fonction pour trier les ingrédients par ordre alphabétique :
+        function triAlphabetique(tableauNonTrie) {
+            //[""].sort();
+            //let tableauNonTrie = [];
+            let tableauTrie = tableauNonTrie.sort();
+            console.log(tableauTrie);
+            return tableauTrie;
+        }
+        
+        let Tab = ["Tomate", "Ail", "Huile d'olive"];
+
+        console.log(Tab.sort());
+
+        console.log("TABLEAU NON TRIE " + IngredientsNonTries);
+
+        const tableauIngredientsTrie = IngredientsNonTries.sort();
+
+        console.log(IngredientsNonTries);
+
+        console.log("TABLEAU TRIE" + tableauIngredientsTrie);
+        
+        afficherTableau(tableauIngredientsTrie);
+
+    </script>
+
+
+</body>
+
+</html>

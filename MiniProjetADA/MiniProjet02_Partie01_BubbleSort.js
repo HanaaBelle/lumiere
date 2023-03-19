@@ -1,4 +1,5 @@
-//En JS ou Python, implémenter (on nous demande toujours une fonction) un *bubble sort* triant cette liste de 20 entiers :
+//En JS ou Python, implémenter (on nous demande toujours une fonction)
+// un *bubble sort* triant cette liste de 20 entiers :
 
 //Bubble Sort en fonction JS
 let triTableau = () => {
@@ -25,6 +26,7 @@ function bubbleSort(tab) {
             if (tab[i] > tab[i + 1]) {
                 permut(i, tab);
                 nbrPermut++;
+                console.log(nbrPermut);
             }
         }
         if (nbrPermut === 0) {
@@ -37,7 +39,6 @@ function bubbleSort(tab) {
 }
 bubbleSort(tableau);
 console.log(tableau);
-
 
 //Ecrire une fonction qui prend deux listes en arguments et retourne un dictionnaire
 //ayant pour clés la première liste et pour valeurs la deuxième, en associant les clés et valeurs
