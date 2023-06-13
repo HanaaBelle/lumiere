@@ -1,0 +1,48 @@
+.boite {
+    border: 2px outset red;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    margin:10px 20px 20px 10px;
+  }
+
+.paragraph {
+    border: 2px groove red;
+}
+
+/* centrer horinzontalement */
+.container-center-horizontal {
+    text-align: center;
+}
+
+.box-center-horizontal {
+    background-color: #F2F2F2;
+    padding: 20px;
+    display: inline-block;
+    border: 2px solid blue;
+}
+
+/* centrer horizontalement et verticalement */
+.container-flex {
+    display: grid;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    border: 1px dashed blueviolet;
+    background-image: url("img/banques-d-images-photos-gratuites-libres-de-droits-domaine-public-creative-commons6-1024x683.jpg.webp");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.box {
+    background-color: transparent;
+    padding: 20px;
+    border: 1px dotted transparent;
+}
+
+/* grille */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}

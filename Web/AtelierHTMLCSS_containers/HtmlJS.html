@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cours JS pour Web</title>
+
+</head>
+
+<body>
+
+    <!--- Trouver un élément avec la méthode : document.getElementsById()--->
+    <p id="my-anchor">Paragraphe 1 de la DOM : "My content"</p>
+
+    <!--- Trouver un élément avec la méthode : document.getElementsByClassName()--->
+    <div>
+        <div class="content">Contenu du DOM num1</div>
+        <div class="content">Contenu du DOM num2</div>
+        <div class="content">Contenu du DOM num3</div>
+    </div>
+
+    <!--- Trouver un élément avec la méthode : document.getElementsByTagName()--->
+    <div>
+        <article>Contenu du DOM num4 de l'Article 1</article>
+        <article>Contenu du DOM num5 l'Article 2</article>
+        <article>Contenu du DOM num6 l'Article 3</article>
+    </div>
+
+    <!--- Trouver un élément avec la méthode : document.querySelector()--->
+    <div id="myId">
+        <p>
+            <span><a href="#">Lien 1</a></span>
+            <a href="#">Lien 2</a>
+            <span><a href="#">Lien 3</a></span>
+        </p>
+        <p class="article">
+            <span><a href="#">Lien 4</a></span>
+            <span><a href="#">Lien 5</a></span>
+            <a href="#">Lien 6</a>
+        </p>
+        <p>
+            <a href="#">Lien 7</a>
+            <span><a href="#">Lien 8</a></span>
+            <span><a href="#">Lien 9</a></span>
+        </p>
+    </div>
+
+    <!--- Trouver un élément avec la méthode :
+        element.children
+        element.parentElement
+        element.nextElementSibling 
+        element.previousElementSibling
+    --->
+    <div id="parent">
+        <div id="previous">Elément du DOM num7 : "Précédent"</div>
+        <div id="main">
+            <p>Paragraphe 1</p>
+            <p>Paragraphe 2</p>
+        </div>
+        <div id="next">Elément du DOM num8 : "Suivant"</div>
+    </div>
+
+    <!--- Apprendre à acceder aux elements du DOM --->
+    <article>
+        <p class="important">Paragraphe Important de l'Article 4.</p>
+        <p>Paragraphe 1 de l'Article 5.</p>
+    </article>
+    <article>
+        <p>Paragraphe 1 de l'Article 6.</p>
+        <ul>
+            <li>Elément 1 de la liste1</li>
+            <li>Elément 2 de la liste1</li>
+            <li>Elément 3 de la liste1</li>
+        </ul>
+        <p id="main-content">Paragraphe 1 de l'Article 6 : "Ce contenu est spécial".</p>
+        <ul class="important">
+            <li>Elément 1 de la liste2</li>
+            <li>Elément 2 de la liste2</li>
+            <li>Elément 3 de la liste2</li>
+        </ul>
+    </article>
+    <article>
+        <p>
+            Paragraphe 1 de l'Article 7.
+        <ul>
+            <li>Elément 1 de la liste3</li>
+            <li>Elément 2 de la liste3</li>
+            <li>Elément 3 de la liste3</li>
+        </ul>
+        </p>
+    </article>
+    <p class="important">
+        Paragraphe 1 de la DOM : "Il n'y a plus d'article".
+    <ul>
+        <li>Elément 1 de la liste4</li>
+        <li>Elément 2 de la liste4</li>
+        <li>Elément 3 de la liste4</li>
+    </ul>
+    </p>
+
+    <!--- Modifiez le contenu d'un élément --->
+    <p id="my_id2">Voici un exemple de contenu pour <strong>texte gras</strong></p>
+
+
+    <p>Voici un exemple de contenu pour <strong>textContent</strong></p>    
+
+    <div id="main2">
+        <ul>
+            <li>Elément 1 du main</li>
+            <li>Elément 2 du main</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    
+    <!---
+    <input type="texte" id="texte" />
+    <p id="contenant"></p>
+    <button type="bouton" onclick="basculer_texte();">Click sur Moi</button>
+    <span id="span_texte" style="display:none;">Ton texte</span>
+    --->
+
+    <script src="../HTMLCSS_Openclassrooms/testIndex.js"></script>
+
+</body>
+
+</html>

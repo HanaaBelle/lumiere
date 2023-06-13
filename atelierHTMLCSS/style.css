@@ -1,0 +1,11 @@
+.conteneur{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+}
+
+.boite{
+    width: 125px;
+    height: 125px;
+    border: 1px solid blue;
+}

@@ -1,0 +1,242 @@
+html,
+body {
+    /* Ici on utilise le sélecteur body pour appliquer une police et une taille par défaut pour les éléments*/
+    padding: 0;
+    margin: 20px;
+    /*font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+     */
+    height: 100%;
+    background-color: #1F2039;
+    font-size: 1em;
+    /* Ici on utilise le sélecteur body pour appliquer une police et une taille par défaut pour les éléments */
+    font-family: 'Manrope', sans-serif;
+    color: #F9F8FF;
+}
+
+a {
+    color: purple;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:hover {
+    color: purple;
+    text-decoration : underline;
+}
+
+a:active{
+    text-decoration-color: #1d313f;
+}
+
+a:focus{
+    background-color: #1f2039;
+    color: white;
+    outline-color: hotpink;
+}
+
+p, li{
+    font-size: 1.1em;
+}
+
+h1{
+    text-align: center;
+    font-size: 3.5em;
+    padding: 1px;
+    font-family: 'Manrope', sans-serif;
+    text-shadow: 6px 6px 10px rgb(120, 128, 133);
+    color: #421169;
+}
+
+h2, h3, h4 {
+    font-family: 'Manrope', cursive;
+    color: darkblue;
+    font-weight: 700;
+}
+
+main article .column p {
+    color: royalblue;
+}
+.ma-classe {
+    font-size: 1.25em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ma-classe-2, .ma-classe {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25em;
+    font-family: 'Manrope', sans-serif;
+}
+
+em {
+    color: #984ba9;
+    font-style: normal;
+    font-weight: 700;
+}
+.photo {
+    /*clip-path:ellipse(48% 48%);*/
+    border-radius: 50%;
+    border: 4px solid #242424;
+    box-shadow: 6px 6px 35px rgb(66, 17, 105);
+}
+
+img:hover {
+    opacity: 0.5;
+}
+
+img:hover + h2 #container-haut{
+    color: hotpink;
+}
+.logo{
+    width:5%;
+    height:5%;
+}
+
+.fond-blanc, .logo{
+    background-color: whitesmoke;
+}
+
+
+.degrade{
+    background: radial-gradient(#8E86B5, #ACAEED);
+    font-family: 'Montserrat', sans-serif;
+    color: darkblue;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.box {
+    background-color: transparent;
+    padding: 20px;
+    border: 1px dotted transparent;
+}
+/* grille */
+.grid-container {
+    display: inline-flex;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+    grid-gap: 5px;
+    align-items:center;
+    padding: 10px; /* Vous ne connaissez pas encore cette propriété mais elle permet d'ajouter
+     de l'espace dans notre élément*/
+}
+
+.container-flex {
+    display: grid;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    border: 1px dashed blueviolet;
+}
+
+
+
+
+
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    background-color: #1f2039;
+}
+
+a {
+    color: #242424;
+    text-decoration: none;
+}
+
+em {
+    color: #a5b4fc;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #a5b4fc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: #f9f8ff;
+}
+
+p,
+li {
+    font-size: 1.1em;
+    color: #f9f8ff;
+}
+
+.entete,
+.pied-de-page {
+    background-color: white;
+}
+
+.cta {
+    background: linear-gradient(#8e86b5, #acaeed);
+    color: white;
+    border-radius: 50px;
+}
+
+.carre-contenu {
+    border-right: 1px solid #8e86b5;
+    border-bottom: 1px solid #8e86b5;
+}
+
+.small{
+    font-size: 1em;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+}
+
+.bordure{
+    border-right: 5px groove #8e86b5;
+    border-bottom: 5px groove #8e86b5;
+}
+
+
+.important{
+    font-style: oblique;
+    font-weight: 700;
+    color: #2E1263;
+}
+
+.special {
+    background: radial-gradient(mediumslateblue, dodgerblue);
+    animation-duration: 13s;
+    animation-delay: 0s;
+    animation-name: glissement;
+    animation-iteration-count: infinite;
+}
+
+@keyframes glissement {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 00%;
+        width: 100%;
+    }
+}
+
+/*
+* {
+
+    margin: 0;
+}
+ */
+
+/*
+header, footer{
+    padding: 20px 50px 20px 50px;
+}
+ */
+
+/*
+section{
+    padding: 10px;
+}
+*/

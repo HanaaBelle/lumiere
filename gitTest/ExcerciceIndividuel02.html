@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1 id="Deviner-un-nombre-entier"></h1>
+
+<script>
+
+    //1 Create a function "donnerNombre" to input a value :
+    function donnerNombre() {
+        let givenNumber;
+        givenNumber = prompt("On va jouer aux devinettes. Entrez un nombre entier : ");
+        console.log(typeof (givenNumber), givenNumber);
+        //document.write("<br>" + givenNumber + "<br>");
+        return givenNumber;
+    }
+
+    //2 Create a function "respectRange" :
+    let respectRange = () => {
+        let stopBoucle = false;
+        do {
+            let guessNumber = parseInt(prompt("Salut 'Joueur 01' ! Veuillez entrer un nombre à deviner compris entre 0 < ? < 50 : "));
+            if (guessNumber >= 0 && guessNumber <= 50) {
+                stopBoucle = true;
+                return guessNumber;
+            } else {
+                alert("Erreur !!! Vous n'avez pas respecté le Range. Veuillez recommancer !");
+            }
+        } while (stopBoucle === false)
+    }
+
+    //3 Create a function "valeurCorrect" :
+    let valeurCorrecte = (valeurEntree) => {
+        let arretBoucle = false;
+        while (arretBoucle === false) {
+            if (valeurEntree === null) {
+                console.log("Bouton 'Annuler' cliqué", valeurEntree);
+                alert("Vous avez cliquer sur le bouton 'Annuler'. Veuillez recommencer !");
+            } else if (valeurEntree === "") {
+                console.log("Aucune valeur n'est entrée !", valeurEntree);
+                alert("Vous n'avez rien entré. Veuillez recommencer !");
+            }
+            let valEntree = parseInt(valeurEntree, 10);
+
+            if (Number.isInteger(valEntree) === true) {
+                arretBoucle = true;
+                return valEntree;
+            } else if (isNaN(valEntree) === true) {
+                console.log(valEntree + " n'est pas un nombre entier ");
+                alert("Erreur !!! La valeur entrée : " + valEntree + " est une chaine de caractère. Veuillez recommencer !");
+            }
+            valeurEntree = donnerNombre();
+        }
+    }
+
+    //4 Create a function "didIWin" :
+    function didIWin(givenNumber, numberToGuess) {
+        let stopLoop = false;
+        while (stopLoop === false) {
+            if (givenNumber !== numberToGuess) {
+                if (givenNumber > numberToGuess) {
+                    console.log(givenNumber);
+                    alert(" 'Plus petit' que " + givenNumber + " veuillez recommencer !");
+                    //return document.write(givenNumber + "est 'Plus petit' veuillez recommencer !");
+                    return stopLoop;
+                }
+                else if (givenNumber < numberToGuess) {
+                    console.log(givenNumber);
+                    alert(" 'Plus grand' " + givenNumber + " veuillez recommencez !");
+                    //return document.write(number + "est 'Plus grand' veuillez recommencez !");
+                    return stopLoop;
+                }
+                else {
+                    console.log("Erreur !!! " + givenNumber + " n'est pas un nombre entier, veuillez recommencez !");
+                    alert("Erreur ! La valeur entrée est incorrecte. Veuillez recommencez !");
+                }
+                givenNumber = donnerNombre();
+            }
+            else {
+                stopLoop = true;
+                console.log(givenNumber);
+                //alert("Bravo ! Vous avez deviné le Nombre, à la c'est bien le : " + givenNumber);
+
+                // language=HTML format=false
+                document.getElementById("Deviner-un-nombre-entier").innerHTML =
+                    "Bravo ! Vous avez deviné le Nombre : " + givenNumber;
+                //document.body.innerHTML += `<h1>Bravo ! Vous avez deviné le Nombre, à votre tentative numéro ${nombreTentatives} c'est bien le : ${givenNumber}</h1>`;
+                //console.log(document.getElementById("Deviner-un-nombre-entier").innerHTML = `Bravo ! Vous avez deviné le Nombre, c'est bien le : ${givenNumber}`);
+                //return document.write("Bravo ! Vous avez deviné le 'Nombre', c''est bien le : ", givenNumber);
+                return stopLoop;
+            }
+
+        }
+    }
+
+    //5 Create a function "gamePlay" :
+    function gamePlay() {
+        let devineLeNombre = respectRange();
+        let yesOrno = false;
+        let nombreTentatives = 0;
+        do {
+            nombreTentatives++;
+            let nombreAdeviner = donnerNombre();
+            let valeurAverifier = valeurCorrecte(nombreAdeviner);
+            yesOrno = didIWin(valeurAverifier, devineLeNombre);
+            console.log(yesOrno);
+            console.log("nombreTentatives" + nombreTentatives);
+        } while (yesOrno === false)
+
+        document.getElementById("Deviner-un-nombre-entier").innerHTML +=
+            " à votre tentative numéro : " + nombreTentatives;
+    }
+
+    gamePlay();
+
+</script>
+</body>
+</html>
+

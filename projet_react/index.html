@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HA MOON STONES</title>
+</head>
+<body>
+
+<div id="root">
+    Bonjour Tout le monde 🥰!
+</div>
+
+<div id="react-goes-here">
+    <!-- Le contenu de cet élément HTML sera remplacé par mes composants React -->
+</div>
+
+<!-- Load React -->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<!-- Load Babel -->
+<!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- Display React in inspector -->
+
+<script type="text/babel">
+    //Soit, on utilise : fonction classique :
+    //function MyComponent() {
+    // return (<div>Mon composant apparait bien 😄!</div>)
+    //}
+
+    //Soit, on utilise arrow function (fonction fléchée)
+    function MyComponent(){
+        const prenom = 'hanaa';
+        const myTitle = "Mon Projet react";
+        return(
+        <div>
+            <div>Mon composant apparait bien 😄!</div>
+            <p>La grande réponse sur la vie, l'univers et le reste est {6 * 7} </p>
+            <h2>{prenom.toUpperCase()}</h2>
+            <div>{2 > 0 ? 'Deux est plus grand que zéro' : 'Ceci n\'apparaîtra jamais'}</div>
+            <h1>{myTitle}</h1>
+            <p>{42}</p>
+        </div>)
+    }
+
+    function Description() {
+        const text = "Ici achetez toutes les pierres dont vous avez toujours rêvé";
+        const emojis = "🤑🤑🤑";
+        return (<p>{ text.slice(0, 12) + emojis }</p>);
+    }
+
+    function Banner() {
+        return (<div><MyComponent/><Description/></div>)
+    }
+
+    //ReactDOM.render(<div><MyComponent /> <Description/></div>, document.getElementById("react-goes-here"));
+
+    ReactDOM.render(<React.Fragment><MyComponent/><Description/></React.Fragment>, document.getElementById("root"))
+
+    console.log(React);
+    console.log(MyComponent());
+</script>
+
+</body>
+</html>
