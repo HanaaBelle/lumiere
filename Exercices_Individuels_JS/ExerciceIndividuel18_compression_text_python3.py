@@ -5,12 +5,27 @@ texte = "généralement, on utilise un texte en faux latin ( le texte ne veut ri
 
 # Découpage
 # Transformer le texte pour le rendre plus facilement manipulable.
-# Créez une fonction A (donnez-lui le nom que vous voulez, c'est simplement pour y faire référence dans cet exercice) prenant en paramètre ce texte (ou tout autre chaîne de caractères) et retourne une liste de mots.
-# Nous définissons un mot comme un ensemble de caractères, quels qu'ils soient, à l'exception des espaces, qui séparent les mots entre eux.
+# Créez une fonction A (donnez-lui le nom que vous voulez, c'est simplement pour y faire référence dans cet exercice) 
+# prenant en paramètre ce texte (ou tout autre chaîne de caractères) et retourne une liste de mots.
+# Nous définissons un mot comme un ensemble de caractères, quels qu'ils soient, à l'exception des espaces, qui séparent 
+# les mots entre eux.
 def decoupeTexte(texte):
    tabMots = texte.split() 
    #listeMots = texte.splitlines()
    return tabMots
 
 texteDecoupe = decoupeTexte(texte)
-print(texteDecoupe)
+# print(texteDecoupe)
+
+# Reconstruction
+# Créez également une fonction B prenant en paramètre une liste de mots, et retournant une chaîne de caractère 
+# composée de l'ensemble des mots dans l'ordre, séparés par un espace.
+# Cette fonction est "l'inverse" de la fonction A créée à l'étape Découpage : actuellement, sans aucune modification 
+# des mots, elle vous permet de reformer le texte originel à partir du résultat de la fonction A.
+
+def reconstruitTexte(listeMots):
+   texteReconstruit = " ".join(listeMots)
+   return texteReconstruit
+
+texteReconstruit = reconstruitTexte(texteDecoupe)
+#print(texteReconstruit)
