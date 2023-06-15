@@ -29,3 +29,49 @@ def reconstruitTexte(listeMots):
 
 texteReconstruit = reconstruitTexte(texteDecoupe)
 #print(texteReconstruit)
+
+# Etape 2 - Compression avec dictionnaire fixe
+# Remplacer certains mots du texte par des références.
+# Nous utiliserons le dictionnaire suivant :
+
+dictionnaireMots = {'texte': '1',
+ 'lorem': '2',
+ 'qui': '3',
+ 'donc': '4',
+ 'est': '5',
+ 'que': '6',
+ 'pour': '7',
+ 'ceci': '8',
+ 'faux-texte': '9',
+ 'dans': '10',
+ 'plus': '11',
+ 'avec': '12'}
+
+# Créez une fonction C prenant en paramètre une liste de mots et un dictionnaire.
+# Pour chaque mot dans la liste, si le mot existe dans le dictionnaire en tant que clef, remplacez-le par la valeur associée.
+# Par exemple, avec le dictionnaire précédent et la liste ['mais', 'ceci', 'est', 'un', 'long', 'faux-texte'], 
+# la fonction doit retourner ['mais', '8', '5', 'un', 'long', '9'].
+
+def remplacerMotsParReferences(listeMots, dictionnaire):
+   nouvelleListe = []
+   for i in range(len(listeMots)):
+      mot = listeMots[i]
+      # if (dictionnaire[mot]):
+      if (mot in dictionnaire.keys()):
+         nouvelleListe.append(dictionnaire[mot])
+      else:
+         nouvelleListe.append(mot)  
+   return nouvelleListe
+
+listeMotsCompresses = remplacerMotsParReferences(texteDecoupe, dictionnaireMots)
+print(listeMotsCompresses)      
+
+
+         
+
+
+# Vous pouvez maintenant enchaîner vos fonctions A, C et B pour produire un nouveau texte :
+# A divise le texte originel en liste de mots,
+# C remplace certains de ces mots par les références du dictionnaire,
+# B récupère la liste de mots et reconstruit un texte complet.
+
