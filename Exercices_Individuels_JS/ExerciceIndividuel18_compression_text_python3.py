@@ -56,7 +56,7 @@ def remplacerMotsParReferences(listeMots, dictionnaire):
    nouvelleListe = []
    for i in range(len(listeMots)):
       mot = listeMots[i]
-      # if (dictionnaire[mot]):
+      # if (dictionnaire[listeMots[i]]):
       if (mot in dictionnaire.keys()):
          nouvelleListe.append(dictionnaire[mot])
       else:
