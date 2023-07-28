@@ -64,14 +64,22 @@ def remplacerMotsParReferences(listeMots, dictionnaire):
    return nouvelleListe
 
 listeMotsCompresses = remplacerMotsParReferences(texteDecoupe, dictionnaireMots)
-print(listeMotsCompresses)      
-
-
-         
-
+# print(listeMotsCompresses)            
 
 # Vous pouvez maintenant enchaîner vos fonctions A, C et B pour produire un nouveau texte :
 # A divise le texte originel en liste de mots,
 # C remplace certains de ces mots par les références du dictionnaire,
 # B récupère la liste de mots et reconstruit un texte complet.
+
+def compresserTexte(texte, dictionnaire):
+   # on decoupe notre texte
+   texteDecoupe = decoupeTexte(texte)
+   # on remplace certains mots par leurs références
+   listeMotsRemplaces = remplacerMotsParReferences(texteDecoupe, dictionnaire)
+   # on reconstruit notre texte
+   texteCompresse = reconstruitTexte(listeMotsRemplaces)
+   return texteCompresse
+
+texteCompresse = compresserTexte(texte, dictionnaireMots)
+print(texteCompresse)   
 

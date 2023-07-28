@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur de température</title>
+</head>
+<body>
+
+<div style="text-align: center;
+            background-color: #8ebf42;
+            color: #ffffff;
+            width: 1000px;
+            height: 150px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            line-height: 30px;
+            display: inline-block">
+    <h1>Convertisseur de température de (°C) en (°F) et de (°F) en (°C)</h1>
+
+    <label> Choisissez le type de température à convertir
+    <select id="maSelection" size="1">
+            <option id="celsius">
+                Celsius (°C)
+            </option>
+            <option id="fahrenheit">
+                Fahrenheit (°F)
+            </option>
+    </select>
+    </label>
+
+    <input type="text" placeholder="Entrer une valeur" id="temperature">
+
+    <button type="button" onclick="convertTemperature()">Récupérer la valeur</button>
+    <div style="display: flex; align-items: center;
+    justify-content: center; /* Aligner horizontalement au centre */
+  /* Aligner verticalement au centre */">
+
+
+    <label>La valeur de la température convertie est
+    <output id="temperatureConvertie"> </output>
+    </label>
+    </div>
+
+</div>
+
+<script>
+    // Ecrire une fonction qui permet de convertir une température de celsius en fahrenheit et vis-versa
+
+    function convertTemperature() {
+        // Sélectionner l'élément dans le "select"
+        let selectionnerElement = document.getElementById("maSelection");
+
+        // Récupérer la valeur de l'élément sélectionné dans "option"
+        let valeurSelectionnee = selectionnerElement.options[selectionnerElement.selectedIndex].value;
+
+        // Sélectionner l'élément input et récupérer sa valeur
+        let valeurTemperatureEntree = document.getElementById("temperature").value;
+
+        // Savoir si la séléction de l'utilisateur Celsius ou Fahrenheit
+        if(valeurSelectionnee === "Celsius (°C)"){
+            // Convertir la température entrée en Celsius
+            let valeurConvertie = Math.round((valeurTemperatureEntree - 32) / 1.8);
+
+            // Vider le contenu de l'output
+            document.getElementById("temperatureConvertie").textContent = "";
+
+            // Retourner la température convertie en Celsius
+            return document.getElementById("temperatureConvertie").innerText += valeurConvertie + " " + valeurSelectionnee;
+        }
+        else if(valeurSelectionnee === "Fahrenheit (°F)"){
+            // Convertir la température entrée en Fahrenheit
+            let valeurConvertie = Math.round((valeurTemperatureEntree * 1.8) + 32);
+
+            // Vider le contenu de l'output
+            document.getElementById("temperatureConvertie").textContent = "";
+
+            // Retourner la température convertie en Fahrenheit
+            return document.getElementById("temperatureConvertie").innerText += valeurConvertie + " " + valeurSelectionnee;
+        }
+    }
+
+</script>
+</body>
+</html>

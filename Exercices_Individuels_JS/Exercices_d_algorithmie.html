@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercices d'Algorithmie</title>
+</head>
+<body>
+
+<h2 id="response"> La réponse pour </h2>
+
+<script>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 1 : qui demande à l’utilisateur un nombre compris entre 1 et 3 jusqu’à ce que la réponse convienne.
+    function demanderBonneReponse() {
+        let stopLoop = false;
+        let nombre = parseInt(prompt("Veuillez entrer un nombre compris entre 1 et 3"));
+        while (stopLoop === false) {
+            console.log(nombre);
+            document.getElementById("response").textContent = " `${nombre}`";
+            if (isNaN(nombre)) {
+                nombre = parseInt(prompt("Erreur ! Veuillez entrer un nombre compris entre 1 et 3"));
+            } else if (nombre !== 1 && nombre !== 2 && nombre !== 3) {
+                nombre = parseInt(prompt("Erreur ! Veuillez entrer un nombre compris entre 1 et 3"));
+            } else {
+                stopLoop = true;
+                document.getElementById("response").innerText += "La réponse est : " + nombre;
+            }
+        }
+    }
+
+    // Appel de la fonction
+    //demanderBonneReponse();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 2 : qui demande un nombre compris entre 10 et 20, jusqu’à ce que la réponse convienne.
+    // En cas de réponse supérieure à 20, on fera apparaître un message : « Plus petit ! »,
+    // et inversement, « Plus grand ! » si le nombre est inférieur à 10.
+
+    function demanderReponseCorrecte() {
+        let stopLoop = false;
+        let nombre = parseInt(prompt("Veuillez entrer un nombre compris entre 10 et 20"));
+        while (stopLoop === false) {
+            console.log(nombre);
+            document.getElementById("response").textContent = "";
+            if (nombre < 10 || nombre > 20 || isNaN(nombre)) {
+                if (nombre < 10) {
+                    alert("Plus grand !");
+                } else if (nombre > 20) {
+                    alert("Plus petit !");
+                } else if (typeof nombre !== "number") {
+                    alert("Ce n'est pas un nombre");
+                }
+                nombre = parseInt(prompt("Erreur ! Veuillez entrer un nombre compris entre 10 et 20"));
+            } else {
+                stopLoop = true;
+                document.getElementById("response").innerText += "La réponse est : " + nombre;
+            }
+        }
+    }
+
+    // Appel de la fonction
+    //demanderReponseCorrecte();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 3 & 4 : qui demande un nombre de départ, et qui ensuite affiche les dix nombres suivants.
+    // Par exemple, si l'utilisateur entre le nombre 17, le programme affichera les nombres de 18 à 27.
+
+    function dix_nombres_suivants() {
+        let nombre = parseInt(prompt("Veuillez entrer un nombre naturel"));
+        document.getElementById("response").textContent += " " + `${nombre} est : `;
+        document.getElementById("response").innerText += "";
+        if (isNaN(nombre)) {
+            console.log("Erreur ! " + nombre + " n'est pas un nombre.");
+            document.getElementById("response").innerText += "\n" + "Erreur ! ce n'est pas un nombre.";
+        } else if (nombre < 0) {
+            console.log("Erreur ! " + nombre + " n'est pas un nombre naturel !");
+            document.getElementById("response").innerText += "\n" + " n'est pas un nombre naturel !";
+        }
+        for (let i = 1; i <= 10; i++) {
+            console.log(nombre + i);
+            document.getElementById("response").innerText += "\n" + (nombre + i);
+        }
+    }
+
+    // Appel du nombre
+    // dix_nombres_suivants();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 5 qui demande un nombre de départ, et qui ensuite écrit la table de multiplication de ce nombre,
+    // présentée comme suit (cas où l'utilisateur entre le nombre 7) :  :
+    // exemple : Table de 7
+    // 7x1 = 7
+    // 7x2 = 14
+    // 7x3 = 21
+    // ...
+    // 7x10= 70
+
+    function table_multiplication() {
+        let nombre = parseInt(prompt("Veuillez entrer un nombre naturel"));
+        document.getElementById("response").textContent += " " + ` de la table de multiplication de ${nombre} est : `;
+        document.getElementById("response").innerText += "";
+        if (isNaN(nombre)) {
+            console.log("Erreur ! " + nombre + " n'est pas un nombre.");
+            document.getElementById("response").innerText += "\n" + "Erreur ! ce n'est pas un nombre.";
+        } else if (nombre < 0) {
+            console.log("Erreur ! " + nombre + " n'est pas un nombre naturel !");
+            document.getElementById("response").innerText += "\n" + " n'est pas un nombre naturel !";
+        } else {
+            for (let i = 0; i <= 10; i++) {
+                console.log("\n" + nombre + " x " + i + " = " + (nombre * i));
+                document.getElementById("response").innerText += "\n" + nombre + " x " + i + " = " + (nombre * i);
+            }
+        }
+    }
+
+    // Appel de la fonction
+    //table_multiplication();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 6 qui demande un nombre de départ, et qui calcule la somme des entiers jusqu’à ce nombre.
+    // Par exemple, si l’on entre 5, le programme doit calculer : 1 + 2 + 3 + 4 + 5 = 15
+    // NB : on souhaite afficher uniquement le résultat, pas la décomposition du calcul.
+
+    function somme_jusqu_au_nombre() {
+        let nombre = parseInt(prompt("Veuillez entrer un nombre naturel"));
+        document.getElementById("response").textContent += " " + ` la somme des entiers jusqu'à ${nombre} est : `;
+        document.getElementById("response").innerText += "";
+        if (isNaN(nombre)) {
+            console.log("Erreur ! " + nombre + " n'est pas un nombre.");
+            document.getElementById("response").innerText += "\n" + "Erreur ! ce n'est pas un nombre.";
+        } else if (nombre < 0) {
+            console.log("Erreur ! " + nombre + " n'est pas un nombre naturel !");
+            document.getElementById("response").innerText += "\n" + " n'est pas un nombre naturel !";
+        } else {
+            let somme = 0;
+            for (let i = nombre; i > 0; i--) {
+                somme += i;
+            }
+            console.log("\n" + somme);
+            document.getElementById("response").innerText += ` ${somme}`;
+        }
+    }
+
+    // Appel de la fonction
+    //somme_jusqu_au_nombre();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 7 qui demande un nombre de départ, et qui calcule sa factorielle.
+    // NB : la factorielle de 8, notée 8! vaut : 1 x 2 x 3 x 4 x 5 x 6 x 7 x 8 = 40320
+
+    function factorielle() {
+        let nombre = parseInt(prompt("veuillez entrer un nombre naturel."));
+        document.getElementById("response").innerText += ` calculer la factorielle de ${nombre} est : `;
+        document.getElementById("response").innerText += "";
+        let factorielle = nombre;
+        if (isNaN(nombre)) {
+            console.log(" Erreur ! nombre n'est pas un nombre !");
+            document.getElementById("response").innerText += ` Erreur ! ${nombre} n'est pas un nombre !`;
+        } else if (nombre < 0) {
+            console.log(" Erreur ! " + nombre + " n'est pas un nombre naturel !");
+            document.getElementById("response").innerText += ` Erreur ! ${nombre} n'est pas un nombre naturel !`;
+        } else {
+            for (let i = 1; i < nombre; i++) {
+                factorielle = factorielle * i;
+            }
+            console.log(factorielle);
+            document.getElementById("response").innerText += ` ${nombre}! = ` + factorielle;
+        }
+    }
+
+    // Appel de la fonction
+    //factorielle();
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Algorithme 8
+    // Partie 1) Ecrire un algorithme qui demande successivement 20 nombres à l’utilisateur, et qui lui dise ensuite
+    // quel était le plus grand parmi ces 20 nombres :
+    // Entrez le nombre numéro 1 : 12
+    // Entrez le nombre numéro 2 : 14
+    // etc...
+    // Entrez le nombre numéro 20 : 6
+    // Le plus grand de ces nombres est : 14
+    // Partie 2) Modifiez ensuite l’algorithme pour que le programme affiche de surcroît en quelle position avait été
+    // saisie ce nombre : C’était le nombre numéro 2
+
+    function nombre_max() {
+        document.getElementById("response").innerText += " le maximum entre les nombres entrés est : ";
+        document.getElementById("response").innerText += "";
+        let nombre_iteration = parseInt(prompt("Veuillez entrer le nombre des nombres entiers que vous souhaitez : "));
+        let nombre = parseInt(prompt("Veuillez maintenant entrer le nombre entier numéro 1 : "));
+        let number_array = [];
+        let max = nombre;
+        let stopLoop = false;
+        let i = 0;
+        while(i < nombre_iteration || stopLoop === false) {
+            if (isNaN(nombre)) {
+                console.log(" Erreur ! nombre n'est pas un nombre !");
+                document.getElementById("response").innerText += ` Erreur ! ${nombre} n'est pas un nombre !`;
+                stopLoop = true;
+            } else if (nombre < 0) {
+                console.log(" Erreur ! " + nombre + " n'est pas un nombre naturel !");
+                document.getElementById("response").innerText += ` Erreur ! ${nombre} n'est pas un nombre naturel !`;
+                stopLoop = true;
+            } else {
+                nombre = prompt(`Veuillez entrer le nombre entier numéro ${i + 2} : `);
+                number_array.push(parseInt(nombre));
+                if (max < number_array[i]) {
+                    max = number_array[i];
+                }
+            }
+            i++;
+        }
+        console.log(max);
+        document.getElementById("response").innerText += " " + max;
+    }
+
+    // Appel de la fonction
+    nombre_max();
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /* Écrivez une fonction en JavaScript
+    qui prend en entrée un tableau d'entiers (par exemple : [4, 3, 6, 8, 3, 2, 5, 6, 4])
+    et qui renvoie un nouveau tableau contenant
+    tous les éléments qui apparaissent
+    plus d'une fois dans le tableau d'origine (par exemple: [3, 6, 4]).
+
+    Comme entrée : un tableau
+    Comme sortie : un nouveau tableau
+
+
+     */
+
+    function find_occurences(array){
+        let new_array = [];
+        //let occurence = {};
+
+        // parcourir le tableau
+        for(let i = 0; i < array.length; i++){
+            let element = array[i];
+            console.log("element " + element);
+            if(array.indexOf(element) !== i && !new_array.includes(element)){
+                new_array.push(parseInt(element));
+                console.log(new_array);
+            }
+            //occurence[element] = (occurence[element] || 0) + 1;
+            //console.log("occurence " + occurence[element]);
+        }
+        //console.log('occurence' + occurence);
+        //for (const element in occurence){
+
+        //if(occurence[element] > 1){
+        //new_array.push(parseInt(element));
+        //console.log(new_array);
+        //}
+
+        //}
+
+        return new_array;
+    }
+
+    // Appel de la fonction
+    let tableau = [4, 3, 6, 8, 3, 2, 5, 6, 4];
+    let tableau_sans_occurences = find_occurences(tableau);
+    console.log(tableau_sans_occurences);
+
+
+
+
+</script>
+
+</body>
+</html>
