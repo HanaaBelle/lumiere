@@ -222,7 +222,7 @@
     }
 
     // Appel de la fonction
-    nombre_max();
+    //nombre_max();
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -239,7 +239,7 @@
 
      */
 
-    function find_occurences(array){
+    /*function find_occurences(array){
         let new_array = [];
         //let occurence = {};
 
@@ -250,10 +250,10 @@
             if(array.indexOf(element) !== i && !new_array.includes(element)){
                 new_array.push(parseInt(element));
                 console.log(new_array);
-            }
+            }*/
             //occurence[element] = (occurence[element] || 0) + 1;
             //console.log("occurence " + occurence[element]);
-        }
+        //}
         //console.log('occurence' + occurence);
         //for (const element in occurence){
 
@@ -264,8 +264,22 @@
 
         //}
 
-        return new_array;
+        //return new_array;
+    //}
+
+    function tab_occurence(tab){
+        let tab_occu = [];
+        for (let i = 0; i < tab.length; i++) {
+            for (let j = i; j < tab.length - 1; j++) {
+                if(tab[i] === tab[j]){
+                    tab_occu = tab[i];
+                }
+            }
+        }
+        return tab_occu;
     }
+
+
 
     // Appel de la fonction
     let tableau = [4, 3, 6, 8, 3, 2, 5, 6, 4];

@@ -1,31 +1,27 @@
-// Exercice 1 : FizzBuzz
-// FizzBuzz est un exercice de programmation très commun.
-// Écrivez une fonction qui affiche les nombres de 1 à 100,
-// mais pour les multiples de 3, affichez "Fizz" à la place du nombre et
-// pour les multiples de 5, affichez "Buzz".
-// Pour les nombres qui sont multiples de 3 et 5, affichez "FizzBuzz".
+/* Écrivez une fonction en JavaScript qui prend en entrée un tableau d'entiers
+(par exemple : [4, 3, 6, 8, 3, 2, 5, 6, 4]) et qui renvoie un nouveau tableau contenant tous les éléments qui
+apparaissent plus d'une fois dans le tableau d'origine (par exemple: [3, 6, 4]) */
 
-// Déclaration de la fonction
-function printFizzBuzz(){
-    // boucle for qui loop sur les nombres de 1 à 100
-    for (let i = 1; i <= 100 ; i++) {
-        // Si le nombre est un multiple de 3 j'affiche Fizz
-        if(i % 3 === 0){
-            console.log("Fizz");
-        }
-        // Sinon si le nombre est un multiple de 5 j'affiche Buzz
-        else if(i % 5 === 0){
-            console.log("Buzz");
-        }
-        // Sinon si le nombre est un multiple de 3 et de 5 j'affiche FizzBuzz
-        if(i % 3 === 0 && i % 5 === 0){
-            console.log("FizzBuzz");
-        }
-        else if (i % 3 !== 0 || i % 5 !== 0){
-            console.log(i)
+function find_occurrences(tab) {
+    let tab_occurrences = [];
+    for (let i = 0; i < tab.length - 1; i++) {
+        let stopLoop = false;
+        let j = i + 1;
+        while (j < tab.length && stopLoop === false) {
+            if (tab[i] === tab[j]) {
+                tab_occurrences.push(tab[i]);
+                console.log("Occurrence " + tab[i] + " à l'index " + j);
+                stopLoop = true;
+            }
+            j++
         }
     }
+    return tab_occurrences;
 }
 
-// Appel de la fonction et affichage du résultat de la fonction
-printFizzBuzz();
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Appel de la fonction
+let tableau = [4, 3, 6, 8, 3, 2, 5, 6, 4];
+let tableau_occurrences = find_occurrences(tableau);
+console.log(tableau_occurrences);
